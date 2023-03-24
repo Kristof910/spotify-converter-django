@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from ..utils import enviroment_checker
+from ..utils.enviroment_checker import enviroment_checker
 
 def index(request):
     try:
-        enviroment_checker.enviroment_checker()
+        enviroment_checker()
         return render(request, "index.html")
 
     except Exception as e:

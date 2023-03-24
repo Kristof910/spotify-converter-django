@@ -3,7 +3,7 @@
 {% block content %}
 <p class="text-center my-5">Spotify account is connected!</p>
 <div class="row justify-content-center">
-    <form class="col-lg-6" action="/converter/end/" method="post">
+    <form class="col-lg-6" action="/converter/converter/" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label for="yt_link">YouTube link you wish to convert:</label>

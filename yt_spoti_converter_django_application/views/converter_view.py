@@ -1,18 +1,22 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from ..converter import saving_tokens
-
+from ..converter.saving_tokens import saving_tokens
+import pdb
 
 def converter(request):
-
+    print("CONV STEP ONE")
     try:
-        saving_tokens.saving_tokens(request)
+        saving_tokens(request)
         
         # POST method
         if request.method == "POST":
+            print("CONV STEP THREE")
+            # pdb.set_trace()
+            # print("ELOOOOOOO")
             return redirect("end")
         
         # GET method
+        print("CONV STEP TWO")
         return render(request, "converter.html")
 
     except Exception as e:

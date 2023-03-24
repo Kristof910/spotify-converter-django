@@ -1,9 +1,12 @@
 from django.urls import path
-from .views import index_view, authentication_view, converter_view, end_view
+from .views.index_view import index
+from .views.authentication_view import authenticaiton
+from .views.converter_view import converter
+from .views.end_view import end
 
 urlpatterns = [
-    path("", index_view.index, name="index"),
-    path("authentication/", authentication_view.authenticaiton, name="authentication"),
-    path("converter/", converter_view.converter, name="converter"),
-    path("end/", end_view.end, name="end"),
+    path("", index, name="index"),
+    path("authentication/", authenticaiton, name="authentication"),
+    path("converter/", converter, name="converter"),
+    path("end/", end, name="end"),
 ]
