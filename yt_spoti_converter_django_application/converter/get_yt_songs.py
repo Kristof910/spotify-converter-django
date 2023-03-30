@@ -8,13 +8,21 @@ def get_yt_songs(yt_api_key, yt_playlist_id):
     yt_song_list = []
     # saves all YT video names into a list
     while True:
-        # for request exceptions
+        # request exceptions
         while True:
             try:
                 response = requests.get(url)
                 break
             except requests.exceptions.RequestException as e:
                 print(e)
+
+        # validating request
+        if response.status_code != 200:
+            raise Exception("YT API response ERROR!")
+
+        if response == None:
+            raise Exception("YT API response is empty!")
+
         data = json.loads(response.text)
 
         for item in data["items"]:

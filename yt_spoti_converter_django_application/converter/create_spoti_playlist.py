@@ -12,7 +12,7 @@ def create_spoti_playlist(spoti_token, spoti_user_id, spoti_playlist_name):
         "name": spoti_playlist_name,
         "description": "This playlist has been converted from YouTube",
     }
-    # for request exceptions
+    # request exceptions
     while True:
         try:
             response = requests.post(
@@ -23,4 +23,12 @@ def create_spoti_playlist(spoti_token, spoti_user_id, spoti_playlist_name):
             break
         except requests.exceptions.RequestException as e:
             print(e)
+
+    # validating response
+    if response.status_code != 201:
+        raise Exception("Spoti API response ERROR!")
+
+    if response == None:
+        raise Exception("Spoti API response is empty!")
+
     return response.json()["id"]

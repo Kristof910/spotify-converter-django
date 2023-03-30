@@ -6,8 +6,9 @@ import json
 def saving_tokens(request):
     # Getting YT playlist ID
     if request.method == "POST":
-        yt_playlist_id = request.GET.get("list", "")
-        request.session["yt_playlist_id"] = yt_playlist_id
+        yt_link = request.POST.get("yt_link")
+        playlist_id = yt_link.split("?list=")[1]
+        request.session["yt_playlist_id"] = playlist_id
 
     # Getting Spotify tokens
     elif request.method == "GET":
