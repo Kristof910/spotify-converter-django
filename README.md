@@ -1,5 +1,10 @@
 Welcome!
 
-This is a music playlist converter where you can insert a YouTube playlist of your choice to convert it to a Spotify playlist by a press of a button! The service will analyse all the videos you linked and find the matching songs on Spotify and will create a playlist on your Spotify account, feel free to use it and leave a feedback!
+This is a simple django web app where the user can log in with a Spotify account and insert a YouTube playlist link which will get converted into a Spotify playlist.
 
-Thank you!
+The web app uses the following enviroment variables: 
+
+SPOTI_CLIENT_ID = you get this on your Spotify Developer Dashboard<br />
+SPOTI_CLIENT_SECRET = you get this on your Spotify Developer Dashboard<br />
+YT_API_KEY = you get this on your Google Developer Dashboard<br />
+DOMAIN_OR_IP = your hosting domain or IP
